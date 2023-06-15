@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Results for {{ ip_address }}</h1>
+  {% if resolved_ip %}
+    <p>Resolved IP address: {{ resolved_ip }}</p>
+  {% endif %}
+  {% if open_ports %}
+    <h2>Open Ports:</h2>
+    <table style="border-collapse: collapse; width: 100%;">
+      <thead>
+        <tr style="background-color: #f2f2f2;">
+          <th style="border: 1px solid black; padding: 2px;">Port</th>
+          <th style="border: 1px solid black; padding: 2px;">Service</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for port, service in open_ports %}
+          <tr>
+            <td style="border: 1px solid black; padding: 2px;">{{ port }}</td>
+            <td style="border: 1px solid black; padding: 2px;">{{ service }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No open ports found.</p>
+  {% endif %}
+{% endblock %}

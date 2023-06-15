@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Subdomain Lookup Results</h1>
+  <h2>Domain: {{ domain }}</h2>
+
+  <h3>Google Subdomains:</h3>
+  <ul>
+    {% for subdomain in google_subdomains %}
+      <li>{{ subdomain }}</li>
+    {% empty %}
+      <li>No subdomains found</li>
+    {% endfor %}
+  </ul>
+
+  <h3>SSL Certificate Subdomains:</h3>
+  <ul>
+    {% for subdomain in ssl_subdomains %}
+      <li>{{ subdomain }}</li>
+    {% empty %}
+      <li>No subdomains found</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

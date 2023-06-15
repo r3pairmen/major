@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>WHOIS Lookup</h1>
+<form method="get" action="{% url 'whois_lookup' %}">
+    <label for="domain">Domain Name:</label>
+    <input type="text" name="domain" id="domain" required>
+    <button type="submit">Lookup</button>
+</form>
+{% endblock %}

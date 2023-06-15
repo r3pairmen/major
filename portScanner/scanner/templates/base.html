@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Port Scanner{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <!-- Other head contents -->
+        <style>
+          body {
+            padding-bottom: 60px; /* Add some padding to the bottom of the body */
+          }
+          .footer {
+            background-color: #333; /* Set the background color */
+            text-align: center; /* Center the text */
+            color: #fff; /* Set the text color */
+            padding: 20px 0; /* Add some padding to the top and bottom of the footer */
+          }
+        </style>      
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="Logo">
+        </div>
+        <div class="header-text">
+            <h1>VINTAGE SECURITIES</h1>
+        </div>
+        <nav>
+            <ul>
+              <a href="{% url 'scanner:scanner' %}">Scanner</a>
+              <li><a href="{% url 'scanner:whois_lookup' %}">WHOIS Lookup</a></li>
+              <li><a href="{% url 'scanner:crawler' %}">Crawler</a></li>
+                <li><a href="#">Link 2</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer class="footer">
+        <div class="container">
+          <p>Vintage Securities</p>
+          <p>&copy; 2023 All rights reserved.</p>
+        </div>
+      </footer>
+</body>
+</html>
+

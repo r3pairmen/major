@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  <h1>Crawler</h1>
+  <form method="post" action="{% url 'scanner:crawler' %}">
+    {% csrf_token %}
+    <label for="domain">Domain:</label>
+    <input type="text" name="domain" id="domain">
+    <button type="submit">Crawl</button>
+  </form>
+{% endblock %}

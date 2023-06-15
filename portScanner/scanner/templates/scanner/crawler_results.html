@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>Results</h1>
+  {% if urls %}
+    <h2>URLs:</h2>
+    <ul>
+      {% for url in urls %}
+        <li>{{ url }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No URLs found.</p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>WHOIS Lookup Results for {{ domain }}</h1>
+{% if result %}
+    <pre>{{ result }}</pre>
+{% else %}
+    <p>No results found.</p>
+{% endif %}
+{% endblock %}
